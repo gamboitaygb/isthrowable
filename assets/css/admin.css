@@ -1,0 +1,556 @@
+body{
+    font-family: 'Source Sans Pro','Helvetica Neue',Helvetica,Arial,sans-serif;
+    font-weight: 400;
+}
+
+img{
+    max-width: 100%;
+    height: auto;
+}
+
+a,li,span,p{
+    font-size: 15px;
+}
+
+[class*="col-"] {
+    width: 100%;
+}
+
+.fluid{
+    margin-left:15px;
+    margin-right: 15px;
+}
+
+.row{
+    margin-left:-15px;
+    margin-right: -15px;
+}
+
+.container{
+    width: 100%;
+    margin:auto;
+}
+
+
+.all-height{
+    height: 100vh;
+}
+.flex-container {
+    display: flex;
+    justify-content: center;
+}
+
+.float-left{
+    float: left;
+}
+.float-right{
+    float: right;
+}
+
+
+.btn-default {
+    position: relative;
+    background-color: #339783;
+    border: none;
+    font-size: 20px;
+    color: #FFFFFF;
+    padding: 10px 15px 10px 15px;
+    text-align: center;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+    text-decoration: none;
+    overflow: hidden;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.btn-default:after {
+    content: "";
+    background: #3CB39A;
+    display: block;
+    position: absolute;
+    padding-top: 300%;
+    padding-left: 350%;
+    margin-left: -20px!important;
+    margin-top: -120%;
+    opacity: 0;
+    transition: all 0.8s
+}
+
+.btn-default:active:after {
+    padding: 0;
+    margin: 0;
+    opacity: 1;
+    transition: 0s
+}
+
+
+
+/*form loggin*/
+.form-admin-login {
+    border: 3px solid #f1f1f1;
+    padding-bottom: 2rem;
+    padding-top: 2rem;
+}
+
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+select, textarea{
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    resize: vertical;
+}
+
+
+.btn-login {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 12px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+btn-login:hover {
+    opacity: 0.8;
+}
+
+
+.imgcontainer {
+    text-align: center;
+//margin: 24px 0 12px 0;
+    max-width: 100%;
+    height: auto;
+}
+
+img.avatar {
+
+    border-radius: 50%;
+}
+
+
+/* Style the label to display next to the inputs */
+label {
+    padding: 12px 12px 12px 0;
+    display: inline-block;
+}
+
+
+
+
+
+input[type=text], select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+}
+
+input[type=submit] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+
+.container {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+}
+
+
+/*home initial*/
+.show-user{
+    background: #00c0ef;
+}
+.show-post{
+    background: #dd4b39;
+}
+.show-question{
+    background: #00a65a ;
+}
+.show-comment{
+    background: #f39c12;
+}
+
+.inner{
+    padding: 10px;
+}
+
+
+.inner h3{
+
+    font-size: 38px;
+    font-weight: bold;
+    margin: 0 0 10px 0;
+    white-space: nowrap;
+    padding: 0;
+    color:white;
+
+}
+.inner p{
+    color:white;
+    margin-bottom: 0;
+}
+
+.iconin {
+    -webkit-transition: all .3s linear;
+    -o-transition: all .3s linear;
+    transition: all .3s linear;
+    position: absolute;
+    top: -10px;
+    right: 25px;
+    z-index: 0;
+    font-size: 90px;
+    color: rgba(0,0,0,0.15);
+}
+
+.small-box-footer {
+    position: relative;
+    text-align: center;
+    padding: 3px 0;
+    color: #fff;
+    color: rgba(255,255,255,0.8);
+    display: block;
+    z-index: 10;
+    background: rgba(0,0,0,0.1);
+    text-decoration: none;
+}
+
+
+
+
+
+.upload-btn-wrapper {
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+}
+
+.btn-upload {
+    border: 2px solid #3CB39A;
+    color: #3CB39A;
+    background-color: white;
+    padding: 8px 20px;
+    border-radius: 8px;
+    font-size: 20px;
+    font-weight: bold;
+
+}
+
+.btn-upload:hover{
+    background: #3CB39A;
+    color:white;
+}
+
+.upload-btn-wrapper input[type=file] {
+    font-size: 100px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
+
+/*side bar off canvas*/
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #222d32;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 25px;
+}
+
+.sidenav .content{
+    padding: 12px 5px 12px 15px;
+}
+.admin-side-menu,.sub-menu{
+    padding: 0;
+}
+
+.sub-menu{
+    background: #2c3b41;
+}
+
+ul.sub-menu li{
+    padding: 3px 0px 10px 10px;
+    list-style-type: none;
+    font-size: 1rem;
+    color: #fff;
+    margin: 5px 0px 0 0px;
+}
+
+ul.sub-menu li:before
+{
+    content:"\00bb";
+    padding: 5px;
+}
+
+ul.sub-menu li a{
+    color:#ffffff;
+    text-decoration: none;
+}
+
+
+a.close-nav{
+    font-size: 25px;
+    color:white;
+    float: right;
+    position: relative;
+    right: 10px;
+    top:-25px;
+}
+
+
+
+/*Menu home*/
+.menu-home{
+    width: 100%;
+    padding: 0;
+}
+.menu-home li{
+    list-style-type: none;
+    display: inline-block;
+}
+
+.menu-home li a{
+    padding: 5px;
+    position: relative;
+    top: -6px;
+    min-height: 50px;
+    color:#333;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+.menu-home li a:hover{
+    border-bottom: 1px solid;
+}
+
+
+
+
+
+/**acordion/
+ */
+
+.accordion {
+    color: #fff;
+    cursor: pointer;
+//padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    transition: 0.4s;
+    margin-left: 5px;
+}
+
+.active, .accordion:hover {
+    background-color: #2c3b41;
+}
+
+.accordion:after {
+    content: '\002B';
+    color: #777;
+    font-weight: bold;
+    float: left;
+}
+
+.active:after {
+    content: "\2212";
+}
+
+.panel {
+    padding: 1px 0px;
+    background-color: #2c3b41;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-out;
+    margin: 10px 0 0 0px;
+}
+
+
+
+
+
+
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+#main {
+    transition: margin-left .5s;
+    padding: 16px;
+}
+
+.show-nav{
+    width: 250px;
+}
+
+
+/*categroy list table*/
+
+.table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    border: 1px solid #ddd;
+    overflow-x:auto;
+}
+
+.table th, td {
+    text-align: left;
+    padding: 8px;
+}
+
+.is-enabled{
+    display: inline;
+    padding: .2em .6em .3em;
+    font-size: 75%;
+    font-weight: 700;
+    line-height: 1;
+    color: #fff;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: .25em;
+    cursor: pointer;
+}
+
+.yes{
+    background: #5cb85c;
+}
+
+.yes:hover {
+    background: red;
+}
+
+
+.no{
+    background: red;
+}
+.no:hover{
+    background: #5cb85c;
+}
+#table_id_paginate a{
+    padding: 5px;
+    border: 1px solid #5cb85c;
+    margin: 2px;
+    color:#5cb85c;
+}
+
+
+
+.post-action li{
+    list-style-type: none;
+    display: inline-block;
+}
+
+.table tr:nth-child(even){background-color: #f2f2f2}
+
+@media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+}
+
+
+
+@media only screen and (min-width: 600px) {
+    /* For tablets: */
+    .col-m-1 {width: 8.33%;}
+    .col-m-2 {width: 16.66%;}
+    .col-m-3 {width: 25%;}
+    .col-m-4 {width: 33.33%;}
+    .col-m-5 {width: 41.66%;}
+    .col-m-6 {width: 50%;}
+    .col-m-7 {width: 58.33%;}
+    .col-m-8 {width: 66.66%;}
+    .col-m-9 {width: 75%;}
+    .col-m-10 {width: 83.33%;}
+    .col-m-11 {width: 91.66%;}
+    .col-m-12 {width: 100%;}
+
+    .container{
+        width: calc(100% - 5rem);
+    }
+
+
+}
+@media only screen and (min-width: 768px) {
+    /* For desktop: */
+    .col-1 {width: 8.33%;}
+    .col-2 {width: 16.66%;}
+    .col-3 {width: 25%;}
+    .col-4 {width: 33.33%;}
+    .col-5 {width: 41.66%;}
+    .col-6 {width: 50%;}
+    .col-7 {width: 58.33%;}
+    .col-8 {width: 66.66%;}
+    .col-9 {width: 75%;}
+    .col-10 {width: 83.33%;}
+    .col-11 {width: 91.66%;}
+    .col-12 {width: 100%;}
+
+
+    .container{
+        width: calc(100% - 10rem);
+        margin:auto;
+    }
+
+}
+
+@media only screen and (min-width: 992px) {
+    .container{
+        width: calc(100% - 20rem);
+    }
+
+    .login{
+        margin:auto;
+    }
+
+
+}

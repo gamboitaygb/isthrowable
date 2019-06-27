@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+ {% block beforehead %}
+     <script src='https://www.google.com/recaptcha/api.js'></script>
+ {% endblock %}
+{% block title %}{{ parent() }} Gracias por registrarte!{% endblock %}
+{% block body %}
+    <section>
+        <div class="container">
+            <div class="col-12 mt-5">
+                <div class="diviver">
+                     <h2>Contáctanos</h2>
+                </div>
+            </div>
+            <div class="col-12 mb-5 basic" id="contact">
+                {{ form_start(form) }}
+                <div class="form-group">
+                    {{ form_widget(form.asunto) }}
+                </div>
+                <div class="form-group">
+                    {{ form_widget(form.message) }}
+                </div>
+                <div class="form-group">
+                    {{ form_widget(form.name) }}
+                    {{ form_widget(form.email) }}
+                </div>
+                <div class="form-group">
+                    {{ form_widget(form.Enviar) }}
+                </div>
+                <div class="form-group">
+                    <div class="g-recaptcha" data-sitekey="6LeSB28UAAAAABUez4Pj1JEf0aPPMqhDENKON02s"></div>
+                </div>
+                {{ form_end(form) }}
+                {% if sent is defined %}
+                    <p class="text-center">{{ sent }}</p>
+                {% endif %}
+            </div>
+        </div>
+    </section>
+{% endblock %}

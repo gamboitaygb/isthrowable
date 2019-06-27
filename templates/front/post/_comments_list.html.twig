@@ -1,0 +1,32 @@
+<div class="is-comment-list">
+    {% if comments|length > 0 %}
+        <h1>{{ comments|length }} {{ 'Respuestas'|trans }}</h1>
+        {% for comment in comments %}
+            <div class=" is-answer answer-{{ comment.id }}">
+                <div class="labels">
+                    <div class="new-box label">
+                        <span class="new-label">{{ comment.user.name|upper }} {{ 'Dice :'|trans }}</span>
+                    </div>
+                </div>
+                {% if comment.user.id is same as(app.user.id) %}
+                    <a href="">Editar</a>
+                {% endif %}
+
+
+
+                <div class="answer-title">
+                    {% if comment.title is not null %}
+                        <span>{{ comment.title }}</span>
+                    {% endif %}
+                </div>
+
+                <div class="comment-content">
+                    {{ comment.content|raw }}
+                </div>
+            </div>
+
+        {% endfor %}
+    {% else %}
+        <span class="not-commented">{{ 'Quieres ser el primero en responder?' }}</span>
+    {% endif %}
+</div>

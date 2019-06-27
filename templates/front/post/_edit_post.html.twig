@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ parent() }} Lista de post{% endblock %}
+{% block stylesheets %}
+    {{  parent() }}
+    <link href="{{ asset('build/post.css') }}" rel="stylesheet" />
+{% endblock %}
+
+
+{% block body %}
+    <div class="container create-post">
+        {{ form_start(form) }}
+        <div class="form-group">
+            {{ form_widget(form.title) }}
+        </div>
+        <div class="form-group">
+            {{ form_widget(form.content) }}
+        </div>
+        <div class="form-group">
+            {{ form_widget(form.photoPath) }}
+        </div>
+        <div class="form-group">
+            <div class="col-12 post-active">
+                <pre>Activar post</pre>
+                {{ form_widget(form.active) }}
+            </div>
+            <div class="col-12 post-active">
+                <pre>Marcar como nuevo</pre>
+                {{ form_widget(form.new) }}
+            </div>
+
+
+        </div>
+        {{ form_end(form) }}
+    </div>
+{% endblock %}
+{% block javascripts %}
+    {{  parent() }}
+    <script type="application/javascript" src="{{ asset('build/ckeditor/ckeditor.js') }}"></script>
+    <script type="application/javascript" src="{{ asset('build/postjs.js') }}"></script>
+{% endblock %}

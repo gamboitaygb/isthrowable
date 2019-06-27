@@ -1,0 +1,5 @@
+User-Agent: *
+Disallow: */assets
+Disallow: */bin
+Disallow: */config
+Disallow: */var

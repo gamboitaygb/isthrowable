@@ -1,0 +1,81 @@
+{% extends 'base.html.twig' %}
+
+{% block meta_title %} {{ single_post.title }}{% endblock %}
+{% block meta_content %}{{ single_post.content|excerpt }}{% endblock %}
+{% block canonical %}{{ absolute_url(single_post.slug)~'.html' }}{% endblock %}
+{% block title %}{{ parent() }} {{ single_post.title }}{% endblock %}
+{% block stylesheets %}
+    {{  parent() }}
+    <link href="{{ asset('build/post.css') }}" rel="stylesheet" />
+{% endblock %}
+
+{% block body %}
+    <div class="container-fluid">
+        <div class="container">
+            <section class="col-12 d-flex mt-5 mb-0">
+                <div class="is-share">
+                    <div class="card__share">
+                        <div class="card__social">
+                            <a class="share-icon facebook" href="#"><i class="icon ion-logo-facebook icon-is"></i></a>
+                            <a class="share-icon twitter" href="#"><i class="icon ion-logo-twitter icon-is"></i></a>
+                            <a class="share-icon googleplus" href="#"><i class="icon ion-logo-googleplus icon-is"></i></a>
+                        </div>
+
+                        <a id="share" class="share-icon" href="#"><i class="icon ion-md-share icon-is"></i></a>
+                    </div>
+                </div>
+            </section>
+            <section class="col-12 d-flex">
+                {% if single_post.picture %}
+                    <div class="img-header">
+                        <img class="img-fluid is-single-img-post" alt="{{ single_post.title }}" src="{{ single_post.picture }}">
+                    </div>
+
+                {% endif %}
+            </section>
+            <section class="col-12 d-flex">
+                <div class="content-title">
+                    <h1 class="is-content-title">{{ single_post.title }}</h1>
+                </div>
+            </section>
+            <section class="col-12 d-flex">
+                <div class="is-content">
+                    <p>{{ single_post.content|raw }}</p>
+                </div>
+            </section>
+            <section class="col-12 d-flex">
+                {% include 'front/post/_comments_list.html.twig' with comments %}
+            </section>
+            <section class="col-12 d-flex">
+
+
+                    <div class="is-comment">
+                        {% if app.user %}
+                            {{ form_start(create_comment) }}
+
+                            <div class="form-group">
+                                {{ form_widget(create_comment.title) }}
+                            </div>
+                            <div class="form-group">
+                                {{ form_widget(create_comment.content) }}
+                            </div>
+                            <div class="form-group">
+                                {{ form_widget(create_comment.Enviar) }}
+                            </div>
+                        {{ form_end(create_comment) }}
+                        {% else %}
+                            <i class="icon ion-md-code-download"></i>
+                            <a class="login-comment" href="{{ path('user_login') }}">{{ 'Porfavor inicia sesión para comentar'|trans }}</a>
+                        {% endif %}
+                    </div>
+
+
+            </section>
+        </div>
+    </div>
+{% endblock %}
+{% block javascripts %}
+    {{  parent() }}
+    <script type="application/javascript" src="{{ asset('build/ckeditor/ckeditor.js') }}"></script>
+    <script type="application/javascript" src="{{ asset('build/postjs.js') }}"></script>
+{% endblock %}

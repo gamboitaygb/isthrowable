@@ -1,0 +1,33 @@
+{% extends 'admin/home.html.twig' %}
+{% block content %}
+   <table id="table_id" class="table">
+        <thead>
+        <th>Id</th>
+        <th>Titulo</th>
+        <th>Contenido</th>
+        <td>Fecha</td>
+        <td>usuario</td>
+        <td>Post</td>
+        <td>Ip</td>
+        </thead>
+        {% for comment in list %}
+            <tr>
+                <td>{{ comment.id }}</td>
+                <td>
+                    {{ comment.title }}
+                </td>
+                <td>{{ comment.content| excerpt }}</td>
+                <td>{{ comment.dateadd|date("m/d/Y") }}</td>
+                <td><a href="{{ url('edit_user', {'id': comment.user.id}) }}" title="{{ comment.user.name }}">
+                        {{ comment.user.name }}
+                    </a></td>
+                <td>
+                    <a href="{{ url('show-post', {'slug': comment.post.slug}) }}" title="{{ comment.post.title }}">
+                        {{ comment.post.title }}
+                    </a>
+                </td>
+                <td>{{ comment.ipaddress }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock %}

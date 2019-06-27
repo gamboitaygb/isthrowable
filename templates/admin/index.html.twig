@@ -1,0 +1,32 @@
+{% extends 'admin/base_admin.html.twig' %}
+
+{% block body %}
+    <section class="flex-container all-height">
+        <div class="col-md-6 col-12 login">
+            <form class="form-admin-login" action="{{ path('admin_login') }}" method="post">
+                {% if error %}
+                    <div>{{ error.message }}</div>
+                {% endif %}
+                <div class="imgcontainer">
+                    <a class="navbar-brand" href="/"><img class="logo" alt="Is Throwable" src="{{ asset('build/static/logo.jpg') }}" /> </a>
+                </div>
+
+                <div class="container">
+                    <label for="uname"><b>Email</b></label>
+                    <input class="form-control"  id="admin_login" type="text" name="_username" value="{{ last_username|default('') }}" />
+                    <label for="psw"><b>Password</b></label>
+                    <input type="password" class="form-control" id="login_pass" name="_password">
+
+                    <input type="submit" class="btn-login" value="Connect">
+                    <br/>
+                    <label for="remember_me" class="form-check-label">
+                        <input class="form-check-input" type="checkbox" id="remember_me" name="_remember_me" checked />
+                        No cerrar sesión
+                    </label>
+                </div>
+
+
+            </form>
+        </div>
+    </section>
+{% endblock %}

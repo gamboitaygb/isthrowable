@@ -1,0 +1,63 @@
+{% extends 'base.html.twig' %}
+
+{% block meta_title %} {{ single_question.title }}{% endblock %}
+{% block meta_content %}{{ single_question.content|excerpt }}{% endblock %}
+{% block canonical %}{{ absolute_url(single_question.slug)~'.html' }}{% endblock %}
+{% block title %}
+    {{ parent() }}
+    {{ single_question.title }}
+{% endblock %}
+{% block stylesheets %}
+    {{  parent() }}
+    <link href="{{ asset('build/post.css') }}" rel="stylesheet" />
+{% endblock %}
+
+{% block body %}
+    <div class="container-fluid">
+        <div class="container">
+            <section class="col-12 d-flex">
+                <div class="content-title">
+                    <h1 class="is-content-title">{{ single_question.title }}</h1>
+                </div>
+            </section>
+            <section class="col-12 d-flex">
+                <div class="is-content">
+                    <p>{{ single_question.content | raw  }}</p>
+                </div>
+            </section>
+            <section class="col-12 d-flex">
+                {% include 'front/post/_comments_list.html.twig' with comments %}
+            </section>
+            <section class="col-12 d-flex">
+
+
+                <div class="is-comment">
+                    {% if app.user %}
+                        {{ form_start(create_comment) }}
+
+                        <div class="form-group">
+                            {{ form_widget(create_comment.title) }}
+                        </div>
+                        <div class="form-group">
+                            {{ form_widget(create_comment.content) }}
+                        </div>
+                        <div class="form-group">
+                            {{ form_widget(create_comment.Enviar) }}
+                        </div>
+                        {{ form_end(create_comment) }}
+                    {% else %}
+                        <i class="icon ion-md-code-download"></i>
+                        <a class="login-comment" href="{{ path('user_login') }}">{{ 'Inicia sesión para comentar.'|trans }}</a>
+                    {% endif %}
+                </div>
+
+
+            </section>
+        </div>
+    </div>
+{% endblock %}
+{% block javascripts %}
+    {{  parent() }}
+    <script type="application/javascript" src="{{ asset('build/ckeditor/ckeditor.js') }}"></script>
+    <script type="application/javascript" src="{{ asset('build/questionjs.js') }}"></script>
+{% endblock %}

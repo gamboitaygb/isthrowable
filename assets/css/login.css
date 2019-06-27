@@ -1,0 +1,89 @@
+
+.is-login
+{
+    padding-top: 2rem;
+}
+.is-box form{
+    padding: 26px 26px;
+}
+
+.is-login .navbar-brand{
+    width: 100%;
+    margin: 0;
+    padding: 0 0 1rem 0px;
+}
+
+.is-login a > img.logo{
+    width: 175px;
+    display: block;
+    margin: auto;
+}
+
+.is-login .create{
+    padding-top: 2rem;
+}
+.is-login .create p{
+    font-size: 14px;
+    color: #767676;
+    font-weight: 400;
+    z-index: 2;
+    position: relative;
+}
+
+.is-login .create p:after{
+    content: "";
+    width: 90%;
+    background-color: transparent;
+    display: block;
+    height: 1px;
+    border-top: 1px solid #e7e7e7;
+    position: absolute;
+    top: 50%;
+    margin-top: -1px;
+    z-index: 1;
+    left: 5%;
+}
+.is-login .create a{
+    width: 100%;
+    display: block;
+}
+
+.is-login .create a span{
+    display: block;
+    text-align: center;
+}
+
+.is-login i{
+    text-align: center;
+    display: block;
+    font-size: 25px;
+}
+
+.is-recovery-password{
+    font-size: 12px;
+    display: block;
+    width: 50%;
+    position: relative;
+    top: 10px;
+    float: right;
+}
+
+#email-pwd{
+    width: 100%;
+    padding: 5px;
+}
+
+.is-remmember{
+    margin-top:1rem;
+}
+
+.staylogged{
+    font-size: 12px;
+}
+
+#update_user_passwordClear_first{
+    margin-bottom: .5rem;
+}
+.ch-password{
+    border: none;
+}

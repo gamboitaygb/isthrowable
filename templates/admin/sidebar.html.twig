@@ -1,0 +1,38 @@
+<div id="mySidenav" class="sidenav">
+    <section class="content">
+        <a href="javascript:void(0)" class="close-nav">&times;</a>
+        <div class="side-menu">
+
+
+            <span class="accordion">Usuarios</span>
+            <div class="panel">
+                <ul class="sub-menu">
+                    <li><a href="#">Crear Usuario</a> </li>
+                    <li><a href="{{ path('user_list') }}">Lista de Usuario</a> </li>
+                </ul>
+            </div>
+
+            <span class="accordion">Post</span>
+            <div class="panel">
+                <ul class="sub-menu">
+                    <li><a href="{{ path('list_post') }}">Lista de Post</a> </li>
+                    <li><a href="{{ path('admin_create_post') }}">Crear Post</a> </li>
+                </ul>
+            </div>
+
+            <span class="accordion">Preguntas</span>
+            <div class="panel">
+                <ul class="sub-menu">
+                    <li><a href="{{ path('admin_question_list') }}">Lista de preguntas</a> </li>
+                </ul>
+            </div>
+
+            <span class="accordion">Comentarios</span>
+            <div class="panel">
+                <ul class="sub-menu">
+                    <li><a href="#">Lista de comentarios</a> </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+</div>

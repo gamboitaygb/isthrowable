@@ -1,0 +1,8 @@
+<h3>{{ 'Últimas preguntas'|trans }}</h3>
+<a class="nav-link add-question" href="{% if app.user %}{{ path('create_question') }}{% else %}{{ path('user_login') }}{% endif %}">{{ 'Añadir pregunta'|trans }}</a>
+<ul class="question-home">
+    {% for question in questions %}
+        <li><i class="icon ion-md-arrow-dropright"></i><a href="{{ url('show-question',{'time': question.time,'slug': question.slug}) }}">{{ question.title }}</a></li>
+    {% endfor %}
+        <li><i class="icon ion-md-arrow-dropright"></i><a href="{{ url('question_list') }}">{{ 'Ver más' }}</a></li>
+</ul>

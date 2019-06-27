@@ -1,0 +1,47 @@
+{% extends 'admin/home.html.twig' %}
+{% block content %}
+    <a class="float-right" href="{{ path('admin_create_post') }}"><button class="btn btn-outline-info is-btn-default">Crear Post</button></a>
+    <table id="table_id" class="table">
+        <thead>
+        <th>Id</th>
+        <th>Nombre</th>
+        <th>Email</th>
+        <th>Rol</th>
+        <th>Activo</th>
+        <th>Fecha de Registro</th>
+        <th>Pais</th>
+        <th>Ip</th>
+        <th>Editar</th>
+        </thead>
+        {% for user in list %}
+            <tr>
+                <td>{{ user.id }}</td>
+                <td>
+                    {{ user.person.name }}
+                </td>
+                <td>{{ user.email }}</td>
+                <td>
+                    {% for roles in user.roles  %}
+                        {{ roles }}
+                    {% endfor %}
+                </td>
+                <td><span id="user-{{ user.id }}" class="is-enabled {{ user.active==1?'yes':'no' }}" data-id="{{ user.id }}" data-type="user" data-action="{{ user.active==1?'1':'0' }}">{{ user.active==1?'Si':'No' }}</span></td>
+                <td>{{ user.person.createdDate|date("m/d/Y") }}</td>
+                <td>{{ user.person.country | countryName }}</td>
+                <td>{{ user.person.ipClient }}</td>
+                <td>
+                    <div class="dropdown show">
+                        <a class="alert alert-info dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Modificafr
+                        </a>
+
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                            <a class="dropdown-item alert-warning" href="{{ url('edit_user',{'id':user.id}) }}">Editar</a>
+                            <a href="#" class="dropdown-item alert-danger del-user" data-id="{{ user.id }}">Eliminar</a>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock %}

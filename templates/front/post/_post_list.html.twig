@@ -1,0 +1,47 @@
+<ul class="list-post is-pagination">
+    {% for post in posts %}
+        <li class="is-post d-flex flex-nowrap page-{{ loop.index }}{% if loop.index>10 %} is-hide-p{% else %} is-show-p{% endif %}">
+
+                {% if post.picture %}
+                     <div class="col-12 col-md-3 hidden-movile">
+                         <a href="{{ url('show-post', {'slug': post.slug}) }}" title="{{ post.title }}">
+
+                                <img class="img-fluid is-img-post img-lazy"
+                                     alt=""
+                                     title="{{ post.title }}"
+                                     src=""
+                                     data-src="{{ post.picture }}"
+                                     data-srcset="{{ post.picture }}">
+                         </a>
+                    </div>
+                {% endif %}
+                <div class="col-12 col-md-9">
+                        <div class="labels">
+                            <div class="new-box label">
+                                <span class="new-label">{{ (post.new == true) ? 'Nuevo': '' }}</span>
+                            </div>
+                        </div>
+                        <a href="{{ url('show-post', {'slug': post.slug}) }}" title="{{ post.title }}">
+                                <h4 class="h4-title">{{ post.title }}</h4>
+                        </a>
+                        <div class="col-12 d-flex flex-nowrap p-0">
+                                <p class="info"><i class="icon ion-md-person"></i><span>{{ post.author.name }}</span></p>
+                                <p class="info"><i class="icon ion-md-calendar"></i> <span>{{ post.dateupd|date("d/m/Y") }}</span></p>
+                                <p class="info">
+                                    {% if post.views > 0 %}
+                                        <i class="icon ion-md-eye"></i>
+                                    {% else %}
+                                         <i class="icon ion-md-eye-off"></i>
+                                    {% endif %}
+                                    <span>{{ post.views }}</span>
+                                </p>
+                                 <p class="info"><i class="icon ion-md-chatboxes"></i> <span id="comment-{{ post.id }}">0</span></p>
+                                 <span id="{{ post.id }}" class="js-like-post-count">0</span>
+                                <a href="{{ path('toggle_heart', {slug: post.slug}) }}" class="like-post js-like-post ion-md-heart-empty"></a>
+
+                        </div>
+                </div>
+
+        </li>
+    {% endfor %}
+</ul>

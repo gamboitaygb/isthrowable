@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ parent() }} Gracias por registrarte!{% endblock %}
+
+{% block body %}
+    <section class="container is-c-home">
+        <section>
+            <div class="col-12">
+                <h3>Gracias por registrarte!!!</h3>
+                <p>Por razones de seguridad para continuar tendrás que activar tu cuenta, te hemos enviado un correo de confirmación a <span style="color:red;">{{ email }}</span>, tu cuenta será activada en cuanto confirmes el email, la confirmación tarda menos que un pestañazo.</p>
+                <p>Te esperamos</p>
+                <pre>Nota:Si no vez nuestro correo mira en tu carpeta de SPAM(El periodo válido para activar tu cuenta es de 24 horas)</pre>
+            </div>
+        </section>
+    </section>
+{% endblock %}

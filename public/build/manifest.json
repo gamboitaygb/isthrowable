@@ -1,0 +1,18 @@
+{
+  "build/admin.css": "/build/admin.css",
+  "build/admin.js": "/build/admin.js",
+  "build/comment.js": "/build/comment.js",
+  "build/fonts/ionicons.eot?v=4.2.3": "/build/fonts/ionicons.3c1e0490.eot",
+  "build/fonts/ionicons.ttf?v=4.2.3": "/build/fonts/ionicons.b2e0fc82.ttf",
+  "build/fonts/ionicons.woff2?v=4.2.3": "/build/fonts/ionicons.43d5c718.woff2",
+  "build/fonts/ionicons.woff?v=4.2.3": "/build/fonts/ionicons.a21b9e1a.woff",
+  "build/global.css": "/build/global.css",
+  "build/global.js": "/build/global.js",
+  "build/images/ionicons.svg?v=4.2.3": "/build/images/ionicons.91433571.svg",
+  "build/like.js": "/build/like.js",
+  "build/login.css": "/build/login.css",
+  "build/loginjs.js": "/build/loginjs.js",
+  "build/post.css": "/build/post.css",
+  "build/postjs.js": "/build/postjs.js",
+  "build/questionjs.js": "/build/questionjs.js"
+}

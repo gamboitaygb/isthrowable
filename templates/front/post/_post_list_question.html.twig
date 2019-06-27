@@ -1,0 +1,15 @@
+<h3>{{ 'Últimos Post'|trans }}</h3>
+<ul class="question-home">
+    {% for post in posts %}
+        <li><a href="{{ url('show-post',{'slug': post.slug}) }}">
+                {% if post.picture %}
+                    <img class="img-fluid img-lazy" width="40"
+                         data-src="{{post.picture}}"
+                         data-srcset="{{post.picture}}"
+                         src=""
+                         title="{{ post.title }}">
+                {% endif %}
+                {{ post.title }}</a></li>
+
+    {% endfor %}
+</ul>

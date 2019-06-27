@@ -1,0 +1,27 @@
+{
+  "devDependencies": {
+    "@symfony/webpack-encore": "^0.19.0",
+    "bootstrap": "4",
+    "copy-webpack-plugin": "^4.5.2",
+    "jquery": "^3.3.1",
+    "sweetalert2": "^7.24.4",
+    "vue": "^2.5.16",
+    "vue-loader": "^15.2.4",
+    "vue-template-compiler": "^2.5.16",
+    "webpack-notifier": "^1.6.0"
+  },
+  "license": "UNLICENSED",
+  "private": true,
+  "scripts": {
+    "dev-server": "encore dev-server",
+    "dev": "encore dev",
+    "watch": "encore dev --watch",
+    "build": "encore production"
+  },
+  "dependencies": {
+    "datatables.net": "^1.10.19",
+    "fs": "0.0.1-security",
+    "ionicons": "4",
+    "popper.js": "^1.14.3"
+  }
+}

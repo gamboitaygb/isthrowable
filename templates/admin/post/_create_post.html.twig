@@ -1,0 +1,33 @@
+{% extends 'admin/home.html.twig' %}
+{% block content %}
+    <div class="container create-post">
+        <div class="row">
+            <section class="col-12 col-md-8 mx-auto basic">
+                {{ form_start(form,{'attr':{'class':'my-form-class'}}) }}
+                <div class="form-group">
+                    {{ form_widget(form.title) }}
+                </div>
+                <div class="form-group">
+                    {{ form_widget(form.content) }}
+                </div>
+                <div class="form-group">
+                    {{ form_widget(form.photoPath) }}
+                </div>
+                <div class="form-group">
+                    <div class="col-12 post-active">
+                        <pre>Activar post</pre>
+                        {{ form_widget(form.active) }}
+                    </div>
+
+                    <div class="col-12 post-active">
+                        <pre>Marcar como nuevo</pre>
+                        {{ form_widget(form.new) }}
+                    </div>
+
+
+                </div>
+                {{ form_end(form) }}
+            </section>
+        </div>
+    </div>
+{% endblock %}

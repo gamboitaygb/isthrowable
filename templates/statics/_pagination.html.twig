@@ -1,0 +1,24 @@
+<div class="row paginate">
+    <div class="pindicator">
+        {% set i=0 %}
+        {% for item in posts %}
+
+            {% if loop.first %}
+                {% set i=i+1 %}
+                <div class="bullet past">
+                    <span class="icon">{{ i }}</span>
+                    <!--div class="text">Pag {{ i }}</div-->
+                </div>
+            {% endif %}
+
+
+            {% if loop.index%10==0 and  i != loop.first and i != loop.last  %}
+                {% set i=i+1 %}
+                <div class="bullet next future">
+                    <span class="icon">{{ i }}</span>
+                    <!--div class="text">Pag {{ i }}</-div-->
+                </div>
+            {% endif %}
+        {% endfor %}
+    </div>
+</div>

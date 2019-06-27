@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ parent() }} Is Throwable!{% endblock %}
+
+{% block body %}
+
+    {% if app.user == null %}
+        <section class="feature">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 col-md-5">
+
+                            {% include 'front/_create_account.html.twig' %}
+                    </div>
+                    <div class="col-12 col-md-7">
+                        <div class="is-center">
+                                <div class="is-title col-12 col-md-8">
+                                    <h1>{% trans %}Pregunta tonta es la que no se hace.{% endtrans %}</h1>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section>
+    {% endif %}
+    <div class="container is-c-home">
+        <div class="flex-container flex-wrap {% if app.user == null %}mt-5{% endif %}">
+            <div class="col-12 col-md-8">
+                {% include 'front/post/_post_list.html.twig' with posts %}
+            </div>
+            <div class="col-md-4">
+                {% include 'front/questions/_question_list_home.html.twig' with questions %}
+            </div>
+        </div>
+        {% include 'statics/_pagination.html.twig' with posts %}
+    </div>
+
+{% endblock %}
+    {% block javascripts %}
+        {{ parent() }}
+        <script type="text/javascript" src="{{ asset('build/like.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('build/comment.js') }}"></script>
+    {% endblock %}

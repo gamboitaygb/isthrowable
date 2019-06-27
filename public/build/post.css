@@ -1,0 +1,224 @@
+.is-comment input,.is-comment textarea{
+    box-sizing: border-box;
+    background-color: #f2f2f2;
+    border: 1px solid #e0e0e0;
+    display: block;
+    font-size: 14px;
+    margin-left: 4px;
+    width: 96%;
+    padding: 10px 10px;
+}
+
+.create-post input[type="checkbox"]{
+    width: 10px;
+}
+.post-active{
+    overflow: auto;
+}
+.post-active pre{
+    font-size: 10px;
+}
+.post-active pre,.post-active input{
+    float: left;
+}
+
+/*Single post**/
+.img-header,.content-title,.is-content,.is-comment{
+    max-width: 100%;
+    margin: auto;
+}
+.is-share{
+    display: flex;
+    justify-content: right;
+    width: 100%;
+    margin: 15px auto;
+}
+.share li{
+    display: inline;
+}
+.share li:first-child{
+    margin-right: 1rem;
+}
+
+.is-content-title {
+    font-weight: 400;
+    font-size: 32px;
+    margin-top: 1rem;
+    margin-bottom: 14px;
+    letter-spacing: 0;
+    color: #3a3a3a;
+    line-height: 1.1;
+}
+
+/**coment*/
+.is-comment{
+    width: 100%;
+}
+.is-comment form{
+    width: 100%
+}
+
+.is-comment-list{
+    width: 100%;
+    margin: auto;
+}
+
+/*-----------------Label comments----------*/
+.is-comment-list .labels{
+    margin-top: 0.9rem;
+}
+
+.is-comment-list .labels .label {
+    background-color: #2b3137;
+    display: inline-block;
+    padding: 0 8px 0 8px;
+    text-align: center;
+    position: relative;
+}
+
+.is-comment-list .labels .label > span {
+    color: #fff;
+    font: normal 10px 'FiraSans-Regular',Helvetica;
+    text-transform: uppercase;
+}
+
+.is-comment-list .not-commented{
+    font-size: 30px;
+    color: #cecece;
+    font-weight: 400;
+}
+
+.login-comment{
+    color:red;
+    display: block;
+    margin: 20px 0 20px 0px;
+}
+
+.is-comment .icon{
+    display: block;
+    width: 30px;
+    margin-left: 7rem;
+    position: relative;
+    top: 23px;
+}
+
+
+.answer-title{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.answer-title span{
+    display: inline;
+    color: rgb(26, 26, 27);
+    overflow-wrap: break-word;
+    font-size: 18px !important;
+    font-weight: 500;
+    line-height: 24px;
+    padding-right: 5px;
+    padding-top: 5px;
+}
+.comment-content p{
+    font-size: 15px;
+    margin: 0 0 0px;
+}
+
+.is-answer{
+    padding: 15px;
+    border: 1px solid #ccc;
+    margin-bottom: 1rem;
+}
+
+.is-answer:last-child{
+    margin-bottom: 3rem;
+}
+
+/*===================Card share==========================*/
+.card__share {
+    position: relative;
+    margin-right: 15px;
+}
+
+.card__social {
+    position: absolute;
+    top: 0;
+    right: 0;
+    visibility: hidden;
+    width: 180px;
+    transform: translateZ(0);
+    transform: translateX(0px);
+    transition: transform 0.35s ease;
+}
+.card__social--active {
+    visibility: visible;
+    /*z-index: 3;*/
+    transform: translateZ(0);
+    transform: translateX(-48px);
+    transition: transform 0.35s ease;
+}
+
+.ion-md-share{
+    font-size: 25px;
+    top: 3px;
+    position: relative;
+}
+
+.share-icon {
+    display: inline-block;
+    width: 48px;
+    height: 48px;
+    line-height: 48px;
+    text-align: center;
+    border-radius: 50%;
+    background-color: #fff;
+    transition: all 0.3s ease;
+    outline: 0;
+
+    box-shadow:
+            0 2px 4px rgba(0,0,0, 0.12),
+            0 2px 4px rgba(0,0,0, 0.24);
+}
+.share-icon:hover,
+.share-icon:focus {
+    box-shadow:
+            0 3px 6px rgba(0,0,0, 0.12),
+            0 3px 6px rgba(0,0,0, 0.24);
+
+    -webkit-transform: scale(1.2);
+    -moz-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    -o-transform: scale(1.2);
+    transform: scale(1.2);
+}
+
+   /* .facebook {
+        background-color: #3b5998;
+    }
+    .twitter {
+        background-color: #00abe3;
+    }
+    .googleplus {
+        background-color: #d3492c;
+    }*/
+
+    .facebook,
+    .twitter,
+    .googleplus {
+        border-radius: 0px;
+        box-shadow: 0 0 0 0;
+        margin: 0 0 0 5px;
+    }
+
+    /*.facebook:hover,
+    .twitter:hover,
+    .googleplus:hover {
+        color: #eee;
+    }*/
+
+@media (min-width: 768px) {
+    .img-header,.is-share,.content-title,.is-content,.is-comment,.is-comment-list{
+        max-width: 80%;
+    }
+    .is-comment form{
+        width: calc(100% + -175px);
+    }
+}

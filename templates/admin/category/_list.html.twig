@@ -1,0 +1,17 @@
+{% extends 'admin/home.html.twig' %}
+{% block content %}
+    <table class="table">
+        <thead>
+            <th></th>
+            <th>Name</th>
+            <th>Enabled</th>
+        </thead>
+    {% for cat in list %}
+        <tr>
+            <td><input type="checkbox"></td>
+            <td>{{ cat.name }}</td>
+            <td><span class="is-enabled {{ cat.active==1?'yes':'no' }}">{{ cat.active==1?'Yes':'No' }}</span></td>
+        </tr>
+    {% endfor %}
+    </table>
+{% endblock %}

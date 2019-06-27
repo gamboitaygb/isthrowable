@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ parent() }} {% endblock %}
+{% block stylesheets %}
+    {{  parent() }}
+    <link href="{{ asset('build/post.css') }}" rel="stylesheet" />
+{% endblock %}
+{% block body %}
+    <section class="container is-c-home">
+        <div class="flex-container flex-wrap">
+            <div class="col-12 col-md-8">
+                {% if questions|length == 0 %}
+                    <div class="mt-5">
+                        <h3>Aún no has preguntado, a que esperas?</h3>
+                        <p>para añadir una pregunta <a href="{{ url('create_question') }}">Clic aquí</a> </p>
+                    </div>
+                {% else %}
+                <ul class="list-post">
+                    {% for question in questions %}
+                        <li class="is-post d-flex flex-nowrap">
+                            <div class="col-12 col-md-12">
+                                {% if edit is defined %}
+                                    <a class="float-right" href="{{ url('edit_question', {'id': question.id}) }}" title="{{ question.title }}">Editar</a>
+                                {% endif %}
+                                <a href="{{ url('show-question',{'time': question.time,'slug': question.slug}) }}" title="{{ question.title }}">
+                                    <h4 class="h4-title mt-2">{{ question.title }}</h4>
+                                </a>
+                                <div class="col-12 d-flex flex-nowrap p-0">
+                                    <p class="info"><i class="icon ion-md-person"></i><span>{{ question.user.person.name }}</span></p>
+                                    <p class="info"><i class="icon ion-md-calendar"></i> <span>{{ question.datecreated|date("d/m/Y") }}</span></p>
+
+                                </div>
+                            </div>
+
+                        </li>
+                    {% endfor %}
+                </ul>
+                {% endif %}
+            </div>
+            <div class="col-md-4">
+                {% include 'front/post/_post_list_question.html.twig' with posts %}
+            </div>
+        </div>
+    </section>
+{% endblock %}
+{% block javascripts %}
+    {{  parent() }}
+    <script type="application/javascript" src="{{ asset('build/postjs.js') }}"></script>
+{% endblock %}

@@ -1,0 +1,34 @@
+{% extends 'admin/home.html.twig' %}
+{% block content %}
+    <a class="float-right" href="{{ path('admin_create_post') }}"><button class="btn btn-outline-info is-btn-default">Crear Post</button></a>
+    <table id="table_id" class="table">
+        <thead>
+        <th>Id</th>
+        <th>Titulo</th>
+        <th>Contenido</th>
+        <th>Autor</th>
+        <th>Fecha</th>
+        </thead>
+        {% for question in list %}
+            <tr>
+                <td>{{ question.id }}</td>
+                <td>{{ question.title }}</td>
+                <td>{{ question.content | excerpt }}</td>
+                <td>{{ question.user.person.name }}</td>
+                <td>{{ question.datecreated|date("d/m/Y") }}</td>
+                <td>
+                    <div class="dropdown show">
+                        <a class="alert alert-info dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Modificafr
+                        </a>
+
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                            <a class="dropdown-item alert-warning" href="#">Editar</a>
+                            <a class="dropdown-item alert-danger del-question" href="#" data-id="{{ question.id }}">Eliminar</a>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock %}

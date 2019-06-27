@@ -1,0 +1,48 @@
+{% extends 'admin/home.html.twig' %}
+{% block content %}
+    <a class="float-right" href="{{ path('admin_create_post') }}"><button class="btn btn-outline-info is-btn-default">Crear Post</button></a>
+    <table id="table_id" class="table">
+        <thead>
+            <th>Img</th>
+            <th>Titulo</th>
+            <th>Visitas</th>
+            <th>Creado</th>
+            <th>Actualizado</th>
+            <th>Activo</th>
+            <th>Nuevo</th>
+            <th>Acción</th>
+        </thead>
+        {% for post in list %}
+            <tr>
+                <td>
+                    {% if post.picture %}
+                                <img class="img-fluid is-img-post" alt="" src="{{ post.picture }}" width="60">
+
+                    {% endif %}
+                </td>
+                <td>
+                    <a href="{{ url('show-post', {'slug': post.slug}) }}" title="{{ post.title }}">
+                        {{ post.title }}
+                    </a>
+                </td>
+                <td>{{ post.views }}</td>
+                <td>{{ post.dateCreated|date("m/d/Y") }}</td>
+                <td>{{ post.dateUpd|date("m/d/Y") }}</td>
+                <td><span id="post-{{ post.id }}" class="is-enabled {{ post.active==1?'yes':'no' }}" data-id="{{ post.id }}" data-type="post" data-action="{{ post.active==1?'1':'0' }}">{{ post.active==1?'Si':'No' }}</span></td>
+                <td><span id="new-{{ post.id }}" class="is-enabled {{ post.new==1?'yes':'no' }}" data-id="{{ post.id }}" data-type="new" data-action="{{ post.new==1?'1':'0' }}">{{ post.new==1?'Si':'No' }}</span></td>
+                <td>
+                    <div class="dropdown show">
+                        <a class="alert alert-info dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Modificafr
+                        </a>
+
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                            <a class="dropdown-item alert-warning" href="#">Editar</a>
+                            <a class="dropdown-item alert-danger" href="#">Eliminar</a>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ parent() }} Welcome!{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <div class="flex-container flex-wrap mt-5">
+            <p class="alert alert-danger">{{ 'Importante leer' }}</p>
+            <p>Is throwable respeta todas las politicas de privaacidad, por lo tanto el <b>Login con Printerest</b> solo es una forma de autenticación . Los datos que
+                nos proporciona la plataforma no son suficientes para el login en <b>Isthrowable</b>, asi que creamos un correo temporal para el login que se compone por
+                <br/>
+                <b>iddeprinterest</b>@isthrowable.com y contraseña aleatoria, si quieres usar esas credenciales te recomendamos que edites tu perfil ahora y cambies la contraseña o simplemente puedes seguir entrando desde printerest
+                <br/>
+                Nota:Cambiar la contraseña no afecta al loguin desde printerest, pero si cambias el email ya el login con printerest no funcionaría y tendrias que loguearte con el nuevo email.
+            </p>
+        </div>
+    </div>
+
+{% endblock %}
+    {% block javascripts %}
+        {{ parent() }}
+        <script type="text/javascript" src="{{ asset('build/like.js') }}"></script>
+    {% endblock %}

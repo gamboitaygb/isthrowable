@@ -1,0 +1,52 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ parent() }} Lista de post{% endblock %}
+{% block stylesheets %}
+    {{  parent() }}
+    <link href="{{ asset('build/post.css') }}" rel="stylesheet" />
+{% endblock %}
+
+{% block body %}
+    <div class="container-fluid">
+        <div class="container">
+            <ul class="list-post">
+                {% for post in posts %}
+                    <li class="is-post d-flex flex-nowrap">
+
+                        {% if post.picture %}
+                            <div class="col-12 col-md-3">
+                                <a href="{{ url('show-post', {'slug': post.slug}) }}" title="{{ post.title }}">
+
+                                    <img class="img-fluid is-img-post" alt="{{ post.title }}" src="{{ post.picture }}">
+                                </a>
+                            </div>
+                        {% endif %}
+                        <div class="col-12 col-md-9">
+                            <div class="labels">
+                                <div class="new-box label">
+                                    <span class="new-label">Nuevo</span>
+                                </div>
+                                <a class="float-md-right" href="{{ url('edit-post',{'id':post.id}) }}">Editar</a>
+                            </div>
+                            <a href="{{ url('show-post', {'slug': post.slug}) }}" title="{{ post.title }}">
+                                <h4 class="h4-title">{{ post.title }}</h4>
+                            </a>
+                            <div class="col-12 d-flex flex-nowrap p-0">
+                                <p class="info"><i class="icon ion-md-person"></i><span>{{ post.author.name }}</span></p>
+                                <p class="info"><i class="icon ion-md-calendar"></i> <span>{{ post.dateupd|date("d/m/Y") }}</span></p>
+                                <p class="info">{% if post.views > 0 %}<i class="icon ion-md-eye-off"></i>{% else %}<i class="icon ion-md-eye"></i>{% endif %}<span>{{ post.views }}</span></p>
+                                <span class="js-like-post-count">0</span>
+                                <a href="{{ path('toggle_heart', {slug: post.slug}) }}" class="like-post js-like-post ion-md-heart-empty"></a>
+
+                            </div>
+                        </div>
+
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+{% endblock %}
+{% block javascripts %}
+    {{  parent() }}
+{% endblock %}

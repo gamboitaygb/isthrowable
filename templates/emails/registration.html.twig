@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+    <title>Activar tu cuenta</title>
+</head>
+
+<body>
+<div class="container">
+    <div class="col-12">
+        <img class="img-fluid d-block mx-auto" src="{{ absolute_url(asset('build/static/logo.jpg')) }}" width="100">
+    </div>
+    <div class="col-12">
+        <h1>Ya molas mucho porque formas parte de nosotros</h1>
+    </div>
+    <div class="col-12">
+        <p>Déjanos darte las gracias por tu registros, solo te queda activar tu cuenta <br>
+            y puedes hacerlo dándo click en activar mi cuenta. </p>
+        <a href="{{ user.person.urlValidate }}">
+            <button style="color: #6089e5;border-color: #6089e5; background-color: transparent;display: inline-block;font-weight: 400;line-height: 1.25;text-align: center;white-space: nowrap;vertical-align: middle;-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;border: 1px solid transparent;padding: .5rem 1rem;font-size: 1rem;border-radius: 19px;cursor:pointer">Activar mi cuenta</button>
+        </a>
+
+    </div>
+    <div class="col-12">
+        <p>Para activar la cuenta tiene que ser en un periodo menor a 24 horasm si no pueder ver el contenido de este correo copia y pega el siguiente link en tu navegador</p>
+        <a href="{{ user.person.urlValidate }}">{{ user.person.urlValidate }}</a>
+    </div>
+</div>
+
+</body>
+
+</html>

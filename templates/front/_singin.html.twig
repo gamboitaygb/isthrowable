@@ -1,0 +1,86 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ parent() }} Sign In!{% endblock %}
+{% block stylesheets %}
+    {{ parent() }}
+    <link href="{{ asset('build/login.css') }}" rel="stylesheet" />
+{% endblock %}
+
+{% block body %}
+
+    {% block header %}{% endblock %}
+
+    <div class="container  is-login is-c-home">
+        <div class="flex-row">
+            <div class="col-12 col-md-4 mx-md-auto">
+                <a class="navbar-brand mt-5 " href="/"><img class="logo" src="{{ asset('build/static/logo.jpg') }}" /> </a>
+                <div class="is-box">
+                    <form action="{{ path('user_login') }}" method="post" class="form-login">
+                        <div class="form-group">
+                            <label for="login_user">{{ 'Email'|trans }}</label>
+                            <input class="form-control" placeholder="example@isthrowable.com" id="login_user" type="text" name="_username" value="{{ last_username|default('') }}" />
+
+                        </div>
+                        <div class="form-group">
+                            <label for="login_pass">{{ 'Contraseña'|trans }}</label>
+                            <input type="password" class="form-control" id="login_pass" placeholder="Password" name="_password">
+                        </div>
+                        <input type="submit" class="btn btn-outline-primary is-btn-default" value="Entrar">
+
+                        <a class="is-recovery-password" data-toggle="modal" data-target="#recovery-password" href="#">{{ 'Olvidaste tu contraseña?'|trans }}</a>
+
+                        <div class="form-check is-remmember">
+                            <label for="remember_me" class="form-check-label">
+                                <input class="form-check-input" type="checkbox" id="remember_me" name="_remember_me" checked />
+                                <span class="staylogged">{{ 'Recordar sesión'|trans }}</span>
+                            </label>
+                        </div>
+                    </form>
+
+                    <ul class="is-list is-center">
+                        <li class="is-list-li"><a href="{{ google_login }}"><i class="icon ion-logo-googleplus icon-is"></i></a> </li>
+                        <li class="is-list-li"><a href="{{ facebook_login }}"><i class="icon ion-logo-facebook icon-is"></i></a> </li>
+                        <li class="is-list-li"><a href="{{ printerest_login }}"><i class="icon ion-logo-pinterest icon-is"></i></a> </li>
+                        <li class="is-list-li"><a href="{{ twitter_login }}"><i class="icon ion-logo-twitter icon-is"></i></a> </li>
+                    </ul>
+
+                </div>
+            </div>
+            <div class="col-12 col-md-4 mx-md-auto create">
+                <p class="text-center">{{ '¿Nuevo? Únete'|trans }}</p>
+                <i class="icon ion-md-code-download"></i>
+                <a href="{{ path('create_account') }}"><span>{{ 'Crear cuenta'|trans }}</span></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="recovery-password" tabindex="-1" role="dialog" aria-labelledby="recoverPassword" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="recoverPassword">Recuperar contraseña</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form action="{{ path('recovery-password') }}" method="post" id="form-recovery">
+                        <div class="form-group">
+                            <input type="email" placeholder="example@isthrowable.com" name="email-pwd" class="recovery-password" id="email-pwd">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" id="send-pass" class="btn btn-primary is-btn-default">Guardar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+{% endblock %}
+{% block javascripts %}
+    {{ parent() }}
+    <script type="application/javascript" src="{{ asset('build/loginjs.js') }}"></script>
+{% endblock %}

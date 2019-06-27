@@ -1,0 +1,93 @@
+{% extends 'admin/base_admin.html.twig' %}
+{% block body %}
+
+    <section class="fluid">
+        {% include 'admin/sidebar.html.twig' %}
+        <div id="main">
+            <div class="admin-menu">
+                <div class="col-12">
+                    <nav class="navbar navbar-static-top" role="navigation">
+                        <ul class="menu-home">
+                            <li><span style="font-size:30px;cursor:pointer" class="open-nav">&#9776;</span></li>
+                            <li><a href="{{ path('admin_home') }}">Inicio</a> </li>
+                            <li><a href="{{ path('user_list') }}">Usuarios</a> </li>
+                            <li><a href="{{ path('list_post') }}">Articulos</a> </li>
+                            <li><a href="{{ path('admin_question_list') }}">Preguntas</a> </li>
+                            <li><a href="{{ path('list_comments') }}">Comentarios</a> </li>
+                            <li><a href="https://isthrowable.com" target="_blank">Ver la web</a> </li>
+                            <li><a href="{{ path('admin_logout') }}">Salir</a> </li>
+                        </ul>
+                 </div>
+            </div>
+            {% block content %}
+                <section class="container-fluid">
+                    <div class="row">
+                        <section class="col-12 d-flex flex-wrap">
+                            <div class="col-12 col-md-3">
+                                <div class="show-user">
+                                    <div class="inner">
+                                        <h3>0</h3>
+
+                                        <p>Usuarios</p>
+                                    </div>
+                                    <div class="iconin">
+                                        <i class="icon ion-md-people"></i>
+                                    </div>
+                                    <a href="{{ path('user_list') }}" class="small-box-footer">
+                                        Ver más <i class="icon ion-md-people"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-3">
+                                <div class="show-post">
+                                    <div class="inner">
+                                        <h3>0</h3>
+
+                                        <p>Artículos</p>
+                                    </div>
+                                    <div class="iconin">
+                                        <i class="icon ion-md-document"></i>
+                                    </div>
+                                    <a href="{{ path('list_post') }}" class="small-box-footer">
+                                        Ver más <i class="icon ion-md-document"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-3">
+                                <div class="show-question">
+                                    <div class="inner">
+                                        <h3>0</h3>
+
+                                        <p>Preguntas</p>
+                                    </div>
+                                    <div class="iconin">
+                                        <i class="icon ion-md-help"></i>
+                                    </div>
+                                    <a href="{{ path('admin_question_list') }}" class="small-box-footer">
+                                        Ver más <i class="icon ion-md-help"></i>
+                                    </a>
+                                </div>
+
+                            </div>
+                            <div class="col-12 col-md-3">
+                                <div class="show-comment">
+                                    <div class="inner">
+                                        <h3>0</h3>
+
+                                        <p>Comentarios</p>
+                                    </div>
+                                    <div class="iconin">
+                                        <i class="icon ion-md-chatboxes"></i>
+                                    </div>
+                                    <a href="{{ path('list_comments') }}" class="small-box-footer">
+                                        Ver más <i class="icon ion-md-chatboxes"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </section>
+            {% endblock %}
+        </div>
+    </section>
+{% endblock %}

@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="es" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="name">
+                <source>Name</source>
+                <target>Nombre</target>
+            </trans-unit>
+            <trans-unit id="email">
+                <source>Email</source>
+                <target>Correo electrónico</target>
+            </trans-unit>
+            <trans-unit id="password">
+                <source>Password</source>
+                <target>Contraseña</target>
+            </trans-unit>
+            <trans-unit id="forgot_password">
+                <source>Forgot you password?</source>
+                <target>Recuperar contraseña</target>
+            </trans-unit>
+            <trans-unit id="remember_me">
+                <source>Remember me</source>
+                <target>Recuérdame</target>
+            </trans-unit>
+            <trans-unit id="3">
+                <source>The silly question is the one that is not asked</source>
+                <target>Pregunta tonta es la que no se hace</target>
+            </trans-unit>
+            <trans-unit id="4">
+                <source>Comunity</source>
+                <target>Comunidad</target>
+            </trans-unit>
+            <trans-unit id="5">
+                <source>Add question</source>
+                <target>Añadir pregunta</target>
+            </trans-unit>
+            <trans-unit id="6">
+                <source>or</source>
+                <target>o</target>
+            </trans-unit>
+            <trans-unit id="sign_up">
+                <source>Sign up</source>
+                <target>Regístrate</target>
+            </trans-unit>
+            <trans-unit id="sign_in">
+                <source>Sign in</source>
+                <target>Entrar</target>
+            </trans-unit>
+            <trans-unit id="new">
+                <source>¿New? Join us</source>
+                <target>¿Nuevo? Únete</target>
+            </trans-unit>
+            <trans-unit id="create_account">
+                <source>Create you account</source>
+                <target>Crea tu cuenta</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

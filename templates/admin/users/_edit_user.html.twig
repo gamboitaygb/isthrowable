@@ -1,0 +1,39 @@
+{% extends 'admin/home.html.twig' %}
+{% block content %}
+    <div class="container">
+    <div class="row">
+    <div class="col-12 col-md-6 mx-auto">
+
+    {{ form_start(form, {'attr': {'class': 'my-form-class basic'} }) }}
+
+    <div class="form-group">
+        {{ form_widget(form.Person.name) }}
+    </div>
+    <div class="form-group">
+        {{ form_widget(form.Person.lastname) }}
+    </div>
+    <div class="form-group">
+        {{ form_widget(form.User.email) }}
+    </div>
+    <div class="form-group">
+        {{ form_widget(form.Person.description) }}
+    </div>
+    <div class="form-group">
+        {{ form_widget(form.User.passwordClear) }}
+    </div>
+    <div class="form-group">
+        <select name="rol_user" class="form-control">
+            <option value="ROLE_USER">ROLE_USER</option>
+            <option value="ROLE_ADMIN">ROLE_ADMIN</option>
+        </select>
+    </div>
+    <div class="form-group">
+        {{ form_widget(form.Person.country) }}
+    </div>
+    <div class="form-group">
+        {{ form_widget(form.Person.photoPath) }}
+    </div>
+    {{ form_end(form) }}
+    <p class="#mjs-error"></p>
+
+{% endblock %}
