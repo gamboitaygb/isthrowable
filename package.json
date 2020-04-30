@@ -3,7 +3,7 @@
     "@symfony/webpack-encore": "^0.19.0",
     "bootstrap": "4",
     "copy-webpack-plugin": "^4.5.2",
-    "jquery": "^3.3.1",
+    "jquery": "^3.5.0",
     "sweetalert2": "^7.24.4",
     "vue": "^2.5.16",
     "vue-loader": "^15.2.4",
